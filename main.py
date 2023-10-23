@@ -58,7 +58,6 @@ class FileSearchApp(QMainWindow):
         container = QWidget()
         container.setLayout(layout)
         self.setCentralWidget(container)
-        self.treeView.expandAll()
 
     # функция задающая фильтр поиска по содержимому LineEdit
     def searchFiles(self):
@@ -66,7 +65,6 @@ class FileSearchApp(QMainWindow):
         # открываем все вложенные файлы, берем текст из LineEdit и меняем фильтр
         self.treeView.expandAll()
         search_text = self.searchLineEdit.text()
-        self.treeView.setModel(self.model)
         self.model.setNameFilters([f'*{search_text}*'])
 
 
